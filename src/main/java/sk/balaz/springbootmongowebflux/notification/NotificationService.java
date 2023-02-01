@@ -18,4 +18,13 @@ public class NotificationService {
     public Mono<Notification> getNotificationById(String id) {
         return notificationRepository.findById(id);
     }
+
+    public Mono<Notification> createNotification(CreateNotificationRequest request) {
+
+        Notification notification = new Notification();
+        notification.setId(request.id());
+        notification.setMessage(request.message());
+
+        return notificationRepository.save(notification);
+    }
 }
