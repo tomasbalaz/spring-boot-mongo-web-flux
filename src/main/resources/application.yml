@@ -6,7 +6,6 @@ spring:
       database: mongo
       host: localhost
       port: 27017
-      username: user
-      password: password
+      username: admin
 server:
   port: 8080
