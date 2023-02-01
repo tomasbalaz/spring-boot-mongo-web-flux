@@ -21,9 +21,10 @@ public class NotificationService {
 
     public Mono<Notification> createNotification(CreateNotificationRequest request) {
 
-        Notification notification = new Notification();
-        notification.setId(request.id());
-        notification.setMessage(request.message());
+        Notification notification = Notification.builder()
+                .id(request.id())
+                .message(request.message())
+                .build();
 
         return notificationRepository.save(notification);
     }
